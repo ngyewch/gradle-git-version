@@ -10,7 +10,5 @@ class GitVersionPluginTest {
     public void gitVersionPluginTest() {
         Project project = ProjectBuilder.builder().build()
         project.pluginManager.apply 'com.github.ngyewch.gitversion'
-
-        assertTrue(project.tasks.generateGitVersionSources instanceof GenerateGitVersionSourcesTask)
     }
 }
