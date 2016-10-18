@@ -1,4 +1,16 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.6"
+    }
+}
+
 apply plugin: 'groovy'
+apply plugin: 'com.gradle.plugin-publish'
 
 repositories {
   jcenter()
@@ -8,4 +20,21 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
     compile 'org.ajoberstar:grgit:1.7.0'
+}
+
+group = 'com.github.ngyewch'
+version = '0.1'
+
+pluginBundle {
+    website = 'https://github.com/ngyewch/gradle-git-version'
+    vcsUrl = 'https://github.com/ngyewch/gradle-git-version.git'
+    description = 'Gradle Git version plugin.'
+    tags = ['git', 'version']
+
+    plugins {
+        gitVersionPlugin {
+            id = 'com.github.ngyewch.git-version'
+            displayName = 'Gradle Git Version plugin'
+        }
+    }
 }
