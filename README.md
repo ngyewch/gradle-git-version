@@ -5,7 +5,7 @@ Simple git version info plugin for Gradle.
 ## Setup
 
     plugins {
-      id "com.github.ngyewch.git-version" version "0.1"
+      id "com.github.ngyewch.git-version" version "0.2"
     }
 
 ## Configuration
