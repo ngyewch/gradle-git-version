@@ -1,6 +1,6 @@
 # gradle-git-version
 
-Simple git version info plugin for Gradle.
+Simple opinionated git version info plugin for Gradle.
 
 ## Setup
 
