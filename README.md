@@ -19,14 +19,16 @@ Simple git version info plugin for Gradle.
 
 ## Properties (gitVersion.gitVersionInfo)
 
-| Name                 | Example                  | Description         |
-| -------------------- | ------------------------ | ------------------- |
-| gitBranchName        | master                   | git branch name.    |
-| gitVersionName       | 1.2.7                    | Version name.       |
-| gitCustomVersionName | 20161110-gce36502        | Custom version name |
-| gitVersionCode       | 12                       | git tag count.      |
-| gitCommitDate        | 20161110                 | git commit date.    |
-| buildDate            | 2016-11-10T11:12:41+0000 | Build date.         |
+| Name                   | Example                                  | Description                |
+| ---------------------- | ---------------------------------------- | -------------------------- |
+| gitBranchName          | master                                   | git branch name.           |
+| gitVersionName         | 1.2.7                                    | Version name.              |
+| gitCustomVersionName   | 20161110-gce36502                        | Custom version name.       |
+| gitVersionCode         | 12                                       | git tag count.             |
+| gitCommitId            | gce36502369ed50c578b3bca0060b2686e5541f7 | git commit ID.             |
+| gitCommitIdAbbreviated | gce36502                                 | git abbreviated commit ID. |
+| gitCommitDate          | 2016-11-09T19:14:48+0000                 | git commit date.           |
+| buildDate              | 2016-11-10T11:12:41+0000                 | Build date.                |
 
 ### gitVersionName format
 

@@ -23,7 +23,7 @@ dependencies {
 }
 
 group = 'com.github.ngyewch'
-version = '0.1'
+version = '0.2'
 
 pluginBundle {
     website = 'https://github.com/ngyewch/gradle-git-version'

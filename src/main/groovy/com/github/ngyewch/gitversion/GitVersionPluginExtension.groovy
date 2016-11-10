@@ -12,7 +12,7 @@ class GitVersionPluginExtension {
         if (versionInfo != null) {
             return versionInfo
         }
-        def versionData = [ gitBranchName: null, gitVersionName: defaultVersionName, gitVersionCode: 0, gitCommitDate: null, buildDate: new Date().format(dateFormat), gitCustomVersionName: defaultVersionName ]
+        def versionData = [ gitBranchName: null, gitVersionName: defaultVersionName, gitVersionCode: 0, gitCommitId: null, gitCommitIdAbbreviated: null, gitCommitDate: null, buildDate: new Date().format(dateFormat), gitCustomVersionName: defaultVersionName ]
         try {
             def git = org.ajoberstar.grgit.Grgit.open()
             try {
@@ -35,6 +35,16 @@ class GitVersionPluginExtension {
                 // ignore exception
             }
             try {
+                versionData.gitCommitId = git.head().id
+            } catch (Exception e) {
+                // ignore exception
+            }
+            try {
+                versionData.gitCommitIdAbbreviated = git.head().abbreviatedId
+            } catch (Exception e) {
+                // ignore exception
+            }
+            try {
                 versionData.gitCommitDate = git.head().date.format(dateFormat)
             } catch (Exception e) {
                 // ignore exception
@@ -47,6 +57,6 @@ class GitVersionPluginExtension {
         } catch (Exception e) {
             // ignore exception
         }
-        versionInfo = new GitVersion(versionData.gitBranchName, versionData.gitVersionName, versionData.gitCustomVersionName, versionData.gitVersionCode, versionData.gitCommitDate, versionData.buildDate)
+        versionInfo = new GitVersion(versionData.gitBranchName, versionData.gitVersionName, versionData.gitCustomVersionName, versionData.gitVersionCode, versionData.gitCommitId, versionData.gitCommitIdAbbreviated, versionData.gitCommitDate, versionData.buildDate)
     }
 }

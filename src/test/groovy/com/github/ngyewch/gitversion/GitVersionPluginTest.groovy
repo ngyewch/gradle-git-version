@@ -9,6 +9,6 @@ class GitVersionPluginTest {
     @Test
     public void gitVersionPluginTest() {
         Project project = ProjectBuilder.builder().build()
-        project.pluginManager.apply 'com.github.ngyewch.gitversion'
+        project.pluginManager.apply 'com.github.ngyewch.git-version'
     }
 }
